@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext {
-        cVersion = "1.0.1"
+        cVersion = "1.0.2"
     }
     repositories {
         google()

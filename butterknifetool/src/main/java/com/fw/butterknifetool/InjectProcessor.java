@@ -245,7 +245,7 @@ public class InjectProcessor extends AbstractProcessor{
             //生成类和方法
             TypeSpec typeSpec = TypeSpec.classBuilder(mClassName)
                     .addModifiers(Modifier.PUBLIC)
-                    .addSuperinterface(ParameterizedTypeName.get(ClassName.get("com.froad.butterknifeapi", "IViewBinder"), TypeName.get(mTypeElement.asType())))
+                    .addSuperinterface(ParameterizedTypeName.get(ClassName.get("com.fw.butterknifeapi", "IViewBinder"), TypeName.get(mTypeElement.asType())))
                     .addMethod(bindBuild.build())
                     .addMethod(unBindBuild.build())
                     .build();
