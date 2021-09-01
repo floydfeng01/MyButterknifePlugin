@@ -1,0 +1,4 @@
+rootProject.name = "MyButterknifePlugin"
+include ':app'
+include ':butterknifetool'
+include ':butterknifeapi'
