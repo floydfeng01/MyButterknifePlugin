@@ -1,8 +1,11 @@
 plugins {
     id 'com.android.library'
-    id 'com.github.dcendents.android-maven'
+//    //上传到jitpack中心仓库配置
+//    id 'com.github.dcendents.android-maven'
+    id 'maven'
 }
-group 'com.github.floydfeng01'
+//上传到jitpack中心仓库配置
+//group 'com.github.floydfeng01'
 
 android {
     compileSdkVersion 30
@@ -39,4 +42,16 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     api project(":butterknifetool")
+}
+
+//上传到maven仓库
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository (url: uri(rootProject.ext.mavenDir))
+            pom.groupId = 'com.fw.butterknifetool'
+            pom.version = '1.0.0'
+            pom.artifactId = 'btfapi'
+        }
+    }
 }

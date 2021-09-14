@@ -1,8 +1,13 @@
 plugins {
     id 'java-library'
-    id 'com.github.dcendents.android-maven'
+//    //上传到jitpack中心仓库配置
+//    id 'com.github.dcendents.android-maven'
+    id 'maven'
 }
-group 'com.github.floydfeng01'
+////上传到jitpack中心仓库配置
+//group 'com.github.floydfeng01'
+project.group = 'com.fw.butterknifetool'
+project.version = '1.0.0'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_7
@@ -13,4 +18,17 @@ dependencies {
     implementation "com.google.auto.service:auto-service:1.0-rc4"
     annotationProcessor "com.google.auto.service:auto-service:1.0-rc4"
     implementation 'com.squareup:javapoet:1.11.1'
+
+}
+
+//上传到maven仓库
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository (url: uri(rootProject.ext.mavenDir))
+//            pom.groupId = 'com.fw.butterknifetool'
+//            pom.version = '1.0.0'
+            pom.artifactId = 'btftool'
+        }
+    }
 }
